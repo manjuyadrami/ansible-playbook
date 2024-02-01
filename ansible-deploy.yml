@@ -1,0 +1,9 @@
+---
+- hosts: webservers
+  tasks:
+    - name: Download warfile
+      command: curl -O https://github.com/manjuyadrami/dockerwithwar/blob/master/java-tomcat-maven-example.war
+    - name: Copy the artifact to deployment directory
+      copy: src=/Users/sarvam/Ansible-Project/ansible-playbook/java-tomcat-maven-example.war dest=/Users/sarvam/Downloads/apache-tomcat-10.1.17/webapps
+    - name: Start tomcat
+      shell: cd /Users/sarvam/Downloads/apache-tomcat-10.1.17/bin && ./startup.sh
