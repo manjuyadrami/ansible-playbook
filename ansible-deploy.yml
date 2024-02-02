@@ -1,5 +1,5 @@
 ---
-- hosts: webservers
+- hosts: localhost
   tasks:
     - name: Download warfile
       command: curl -O https://github.com/manjuyadrami/dockerwithwar/blob/master/java-tomcat-maven-example.war
